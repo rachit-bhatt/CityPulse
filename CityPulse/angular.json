@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "city-pulse": {
+    "CityPulse": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "city-pulse:build:production"
+              "buildTarget": "CityPulse:build:production"
             },
             "development": {
-              "buildTarget": "city-pulse:build:development"
+              "buildTarget": "CityPulse:build:development"
             }
           },
           "defaultConfiguration": "development"
