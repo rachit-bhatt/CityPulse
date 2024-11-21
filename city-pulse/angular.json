@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CityPulse": {
+    "city-pulse": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -41,8 +41,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "CityPulse:build:production"
+              "buildTarget": "city-pulse:build:production"
             },
             "development": {
-              "buildTarget": "CityPulse:build:development"
+              "buildTarget": "city-pulse:build:development"
             }
           },
           "defaultConfiguration": "development"
