@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AboutUs } from './AboutUs';
 import { Role } from './Role';
 import * as AboutJSON from './About.json';
+import { AboutUsListComponent } from '../about-us-list/about-us-list.component';
 
 @Component({
   selector: 'app-about-us',
-  imports: [],
+  imports: [AboutUsListComponent],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css'
 })

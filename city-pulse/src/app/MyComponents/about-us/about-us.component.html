@@ -1,20 +1,3 @@
-<div class="container-fluid center">
-  <table>
-    <caption>Dev-Team</caption>
-    <tbody>
-      <tr>
-        <td>College ID</td>
-        <td>{{ about_us }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <ul>
-    <li>College ID</li>
-    <li>First Name</li>
-    <li>Last Name</li>
-    <li>Role</li>
-    <li>Giliub</li>
-    <li>LinkedIn</li>
-    <li>Email</li>
-  </ul>
+<div *ngFor = "let info of about_us">
+  <app-about-us-list [about_item] = "info"></app-about-us-list>
 </div>

@@ -11,13 +11,13 @@ export class AboutUs {
     EmailAddress : string = ''
 
     constructor(
-        ID : string,
-        FirstName : string,
-        LastName : string,
-        Designation : number,
-        GitHubProfile : string,
-        LinkedInProfile : string,
-        EmailAddress : string
+        ID : string = '',
+        FirstName : string = '',
+        LastName : string = '',
+        Designation : number = 0,
+        GitHubProfile : string = '',
+        LinkedInProfile : string = '',
+        EmailAddress : string = ''
     ) {
         this.ID = ID,
         this.FirstName = FirstName
