@@ -9,18 +9,23 @@ import * as AboutJSON from './About.json';
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css'
 })
+
 export class AboutUsComponent {
 
-  about_us : AboutUs[];
-  demo : AboutUs[] = [];
+  about_us : AboutUs[] = [];
 
   constructor() {
-    this.about_us = [
-      new AboutUs('', '', '', Role.UI_DEVELOPER, '', '', '')
-    ];
-
-    for (let index = 0; index < AboutJSON.length; index++) {
-      this.demo.push(AboutJSON[index]);
-    }
+    AboutJSON.forEach(record => {
+      this.about_us.push({
+        ID : record.ID,
+        FirstName : record.FirstName,
+        LastName : record.LastName,
+        Designation : record.Designation,
+        Position : Role[record.Designation],
+        GitHubProfile : record.GitHubProfile,
+        LinkedInProfile : record.LinkedInProfile,
+        EmailAddress : record.EmailAddress
+      });
+    })
   }
 }

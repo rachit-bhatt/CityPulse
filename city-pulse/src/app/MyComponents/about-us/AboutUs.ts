@@ -4,7 +4,8 @@ export class AboutUs {
     ID : string = ''
     FirstName : string = ''
     LastName : string = ''
-    Designation : Role = Role.UI_DEVELOPER
+    Designation : number = Role.UI_DEVELOPER
+    readonly Position : string = Role[this.Designation]
     GitHubProfile : string = ''
     LinkedInProfile : string = ''
     EmailAddress : string = ''
@@ -13,7 +14,7 @@ export class AboutUs {
         ID : string,
         FirstName : string,
         LastName : string,
-        Designation : Role,
+        Designation : number,
         GitHubProfile : string,
         LinkedInProfile : string,
         EmailAddress : string
