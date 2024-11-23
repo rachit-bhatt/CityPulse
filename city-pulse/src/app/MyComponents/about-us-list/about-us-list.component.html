@@ -1,20 +1,14 @@
 <div class="container-fluid center">
-    <table>
-      <caption>Dev-Team</caption>
-      <tbody>
-        <tr>
-          <td>College ID</td>
-          <td>{{ about_item.ID }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <ul>
-      <li>College ID</li>
-      <li>First Name</li>
-      <li>Last Name</li>
-      <li>Role</li>
-      <li>Giliub</li>
-      <li>LinkedIn</li>
-      <li>Email</li>
-    </ul>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ about_item.FirstName }} {{ about_item.LastName }} ({{ about_item.ID }})</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ about_item.Position }}</h6>
+      <div class="card-body">
+        <a href="#" class="card-link">{{ about_item.LinkedInProfile }}</a>
+        <a href="#" class="card-link">{{ about_item.GitHubProfile }}</a>
+        <a href="#" class="card-link">{{ about_item.EmailAddress }}</a>
+      </div>
+    </div>
   </div>
+</div>
