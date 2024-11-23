@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { DateTimeComponent } from './MyComponents/date-time/date-time.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [DateTimeComponent],
+  imports: [CommonModule, DateTimeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'city-pulse';
 }
