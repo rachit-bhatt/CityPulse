@@ -43,8 +43,6 @@ jobs:
 
       - name: Pull latest changes from Deploy
         run: |
-          git fetch origin Testing
-          git pull origin Deploy
           git checkout Deploy
           git pull origin Deploy
 
