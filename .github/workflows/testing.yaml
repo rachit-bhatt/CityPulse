@@ -12,6 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Switch to Testing Branch
+        run: |
+          git fetch origin
+          git checkout Testing
+
       - name: Push to Testing
         run: |
           git config --global user.name 'github-actions[bot]'
