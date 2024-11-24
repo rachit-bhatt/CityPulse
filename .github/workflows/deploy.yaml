@@ -39,18 +39,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Deploy branch if it doesn't exist
-        run: |
-          git fetch origin
-          if ! git rev-parse --verify origin/Deploy; then
-            git checkout -b Deploy
-            git push origin Deploy
-          else
-            git checkout -b Deploy origin/Deploy
-          fi
-
       - name: Pull latest changes from Deploy
         run: |
+          git checkout Deploy
           git pull origin Deploy
 
       - name: Push to Deploy
@@ -78,4 +69,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/CityPulse;
+          publish_dir: ./dist/CityPulse
