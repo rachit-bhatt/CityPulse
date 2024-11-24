@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - Staging
-      - Testing
-      - Deploy
 
 jobs:
   push-to-testing:
@@ -41,9 +39,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Fetch and checkout Deploy branch
+        run: |
+          git fetch origin
+          git checkout -b Deploy origin/Deploy
+
       - name: Pull latest changes from Deploy
         run: |
-          git checkout Deploy
           git pull origin Deploy
 
       - name: Push to Deploy
