@@ -1,0 +1,25 @@
+name: Push to Testing Branch
+
+on:
+  push:
+    branches:
+      - Staging
+
+jobs:
+  push-to-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Switch to Testing Branch
+        run: |
+          git fetch origin
+          git checkout Testing
+
+      - name: Push to Testing
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git merge Staging --no-ff --no-edit --allow-unrelated-histories
+          git push origin Testing
