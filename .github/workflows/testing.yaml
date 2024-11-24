@@ -12,16 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Create Testing branch if it doesn't exist
-        run: |
-          git fetch origin
-          if ! git rev-parse --verify origin/Testing; then
-            git checkout -b Testing
-            git push origin Testing
-          else
-            git checkout Testing
-          fi
-
       - name: Push to Testing
         run: |
           git config --global user.name 'github-actions[bot]'
