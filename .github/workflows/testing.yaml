@@ -12,10 +12,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Switch to Testing Branch
+      - name: Create Testing branch if it doesn't exist
         run: |
           git fetch origin
-          git checkout Testing
+          if ! git rev-parse --verify origin/Testing; then
+            git checkout -b Testing
+            git push origin Testing
+          else
+            git checkout Testing
+          fi
 
       - name: Push to Testing
         run: |
