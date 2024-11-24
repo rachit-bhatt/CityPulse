@@ -1,0 +1,30 @@
+name: Push to Testing Branch
+
+on:
+  push:
+    branches:
+      - Staging
+
+jobs:
+  push-to-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Testing branch if it doesn't exist
+        run: |
+          git fetch origin
+          if ! git rev-parse --verify origin/Testing; then
+            git checkout -b Testing
+            git push origin Testing
+          else
+            git checkout Testing
+          fi
+
+      - name: Push to Testing
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git merge Staging --no-ff --no-edit --allow-unrelated-histories
+          git push origin Testing
