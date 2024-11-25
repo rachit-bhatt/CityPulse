@@ -41,8 +41,8 @@ jobs:
 
       - name: Fetch and checkout Deploy branch
         run: |
+          git fetch origin/Testing
           git fetch origin
-          git fetch Testing
           git checkout -b Deploy origin/Deploy
 
       - name: Pull latest changes from Deploy
