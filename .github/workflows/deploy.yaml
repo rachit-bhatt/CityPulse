@@ -39,10 +39,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pulling latest changes from Testing branch
+        run: |
+          git fetch origin
+          git pull origin Testing
+          git checkout -b Testing origin/Testing
+
       - name: Fetch and checkout Deploy branch
         run: |
           git fetch origin
-          git pull Testing
           git checkout -b Deploy origin/Deploy
 
       - name: Pull latest changes from Deploy
