@@ -22,14 +22,18 @@ export class DateTimeComponent {
   public weatherData: any;
   public city: string = 'Toronto';
 
-   public get get_date(): string {
+  public get get_date(): string {
     let formatted_date = this.datePipe.transform(this.today, 'yyyy-MM-dd HH:mm:ss');
     return formatted_date ? formatted_date : this.today.toDateString();
   }
 
-  constructor(private datePipe: DatePipe,
-    private http: HttpClient
-  ) {
+  public get get_degree(): number {
+    let formatted_degree = (this.weatherData?.main?.temp - 273.15);
+    formatted_degree = Math.round(formatted_degree * 100) / 100;
+    return formatted_degree ? formatted_degree : 0;
+  }
+
+  constructor(private datePipe: DatePipe, private http: HttpClient) {
 
   }
 
@@ -57,7 +61,7 @@ export class DateTimeComponent {
     const params = {
       q: city,
       appid: this.apiKey,
-      units: 'imperial'
+      units: 'metrics'
     };
 
     return this.http.get(this.baseUrl, { params });
