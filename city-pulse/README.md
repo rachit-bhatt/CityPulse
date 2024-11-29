@@ -1,59 +1,68 @@
-# CityPulse
+# CityPulse: Your Real-Time Toronto Companion
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
+This repository contains the source code for CityPulse, an Angular web application that provides real-time weather information and essential updates for Toronto, Canada.
 
-## Development server
+## Key Features:
 
-To start a local development server, run:
+- Displays the current date and time, updating every second.
+- Fetches and displays the current temperature in Toronto using the OpenWeatherMap API.
+- Includes dedicated sections for About Us, Services, and Customers (with placeholder content for now). 
 
-```bash
-ng serve
-```
+## Optional Features (not implemented in this version):
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- User authentication with Google accounts to personalize the experience.
+- Integration with additional APIs for more in-depth city information.
 
-## Code scaffolding
+## Project Setup:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Prerequisites:
 
-```bash
-ng generate component component-name
-```
+- Node.js (version 12 or later) and npm (Node Package Manager)
+- Code editor or IDE (e.g., Visual Studio Code, WebStorm)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Installation:
 
-```bash
-ng generate --help
-```
+1. Clone this repository.
+2. Navigate to the project directory in your terminal.
+3. Install dependencies:
 
-## Building
+   ```bash
+   npm install
+   ```
 
-To build the project run:
+### Running the Application:
 
-```bash
-ng build
-```
+#### 1. Start the Deployment Server:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+    ```bash
+    ng serve
+    ```
 
-## Running unit tests
+#### 2. Access the application in your browser at `http://localhost:4200`.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Deployment:
 
-```bash
-ng test
-```
+This repository does not include deployment instructions. However, you can deploy the application to a platform of your choice (e.g., Firebase Hosting, Netlify) following their specific guidelines.
 
-## Running end-to-end tests
+## Project Structure:
 
-For end-to-end (e2e) testing, run:
+- **src** - Contains the Angular application source code.
+- **assets** - Stores static assets like images and logos.
+- **environments** - Holds environment-specific configurations (e.g., API keys).
 
-```bash
-ng e2e
-```
+## Contributing:
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+We welcome contributions to this project! Please see the CONTRIBUTING.md file (if it exists) for guidelines on how to contribute.
 
-## Additional Resources
+## License:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+MIT (see LICENSE file for details).
+
+## Demo:
+
+A live demo of the application is currently unavailable.
+
+## Additional Notes:
+
+* This project is intended for educational purposes and is a basic implementation.
+* Further development can include features like user authentication, additional functionalities, and a more robust user interface.
