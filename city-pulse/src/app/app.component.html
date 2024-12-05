@@ -15,13 +15,13 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/our-services">Our Services</a>
+            <a href="#our-services" class="nav-link">Our Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/our-customers">Our Customers</a>
+            <a href="#our-customers" class="nav-link">Our Customers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/about-us">About Us</a>
+            <a href="#about-us" class="nav-link">About Us</a>
           </li>
         </ul>
       </div>
@@ -31,7 +31,13 @@
   <!-- #endregion -->
 
   <app-date-time class="container-fluid"></app-date-time>
-
+  
+  <app-our-services id="our-services"></app-our-services>
+  
+  <app-our-customers id="our-customers"></app-our-customers>
+  
+  <app-about-us id="about-us"></app-about-us>
+  
 </div>
 
 <router-outlet></router-outlet>

@@ -1,14 +1,7 @@
-<div class="container-fluid center">
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{ about_item.FirstName }} {{ about_item.LastName }} ({{ about_item.ID }})</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ about_item.Position }}</h6>
-      <div class="card-body">
-        <a href="#" class="card-link">{{ about_item.LinkedInProfile }}</a>
-        <a href="#" class="card-link">{{ about_item.GitHubProfile }}</a>
-        <a href="#" class="card-link">{{ about_item.EmailAddress }}</a>
-      </div>
-    </div>
-  </div>
+<h3 class="card-title">{{ about_item.FirstName }} {{ about_item.LastName }} ({{ about_item.ID }})</h3>
+<p>{{ about_item.Position }}</p>
+<div class="links">
+  <a href="{{ about_item.LinkedInProfile }}">{{ about_item.LinkedInProfile }}</a>
+  <a href="{{ about_item.GitHubProfile }}" class="card-link">{{ about_item.GitHubProfile }}</a>
+  <a href="mailto:{{ about_item.EmailAddress }}" class="card-link">{{ about_item.EmailAddress }}</a>
 </div>
