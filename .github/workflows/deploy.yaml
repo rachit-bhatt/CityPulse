@@ -20,7 +20,6 @@ jobs:
             git push origin Testing
           else
             git checkout -b Testing origin/Testing
-          fi
 
       - name: Push to Testing
         env:
