@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { AboutUs } from './AboutUs';
 import { Role } from './Role';
-import * as AboutJSON from './About.json';
+import AboutJSON from './About.json';
 import { CommonModule } from '@angular/common';
+import { AboutUsListComponent } from '../about-us-list/about-us-list.component';
 
 @Component({
   selector: 'app-about-us',
-  imports: [CommonModule],
+  imports: [CommonModule, AboutUsListComponent],
   templateUrl: './about-us.component.html',
   styleUrl: './about-us.component.css'
 })
