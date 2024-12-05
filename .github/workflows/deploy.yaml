@@ -72,7 +72,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      - name: Build Project
+        run: npm build
+
+      - name: Build Execute
         run: npm run build --configuration production
 
       - name: Deploy to GitHub Pages
