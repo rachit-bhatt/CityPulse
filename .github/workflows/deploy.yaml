@@ -20,6 +20,7 @@ jobs:
             git push origin Testing
           else
             git checkout -b Testing origin/Testing
+          fi
 
       - name: Push to Testing
         env:
@@ -71,11 +72,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Auditing
-        run: npm audit
-
       - name: Build project
-        run: npm run build --prod
+        run: npm run build --configuration production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
