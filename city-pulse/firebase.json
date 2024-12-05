@@ -1,10 +1,17 @@
 {
   "hosting": {
-    "public": "Deploy",
+    "public": "dist/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "site": "citypulse-3af38",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
