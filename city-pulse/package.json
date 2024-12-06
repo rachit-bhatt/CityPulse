@@ -1,12 +1,12 @@
 {
   "name": "city-pulse",
-  "version": "latest",
+  "version": "1.0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --code-coverage"
   },
   "private": true,
   "dependencies": {
