@@ -13,7 +13,11 @@ branches:
 
 script:
   - npm install
+  - npm run test -- --watch=false --code-coverage
   - npm run build --prod
+
+after_success:
+  - npm run coveralls
 
 deploy:
   provider: pages
