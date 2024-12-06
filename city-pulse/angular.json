@@ -104,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "city-pulse"
+  "defaultProject": "city-pulse",
+  "cli": {
+    "analytics": false
+  }
 }

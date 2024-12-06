@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-date-time',
@@ -22,6 +23,8 @@ export class DateTimeComponent {
   public weatherData: any;
   public city: string = 'Toronto';
 
+  public user: any;
+
   public get get_date(): string {
     let formatted_date = this.datePipe.transform(this.today, 'yyyy-MM-dd HH:mm:ss');
     return formatted_date ? formatted_date : this.today.toDateString();
@@ -33,7 +36,7 @@ export class DateTimeComponent {
     return formatted_degree ? formatted_degree : 0;
   }
 
-  constructor(private datePipe: DatePipe, private http: HttpClient) {
+  constructor(private datePipe: DatePipe, private http: HttpClient, private authService: AuthService) {
 
   }
 
@@ -43,6 +46,19 @@ export class DateTimeComponent {
     this.intervalId = setInterval(() => {
       this.today = new Date();
     }, 1000);
+
+    //#endregion
+
+    //#region Google Authentication
+
+    this.authService.getUser().subscribe((user: any) => {
+      this.user = user;
+      if (user) {
+        this.getWeather(this.city).subscribe(data => {
+          this.weatherData = data;
+        });
+      }
+    });
 
     //#endregion
 
@@ -65,6 +81,14 @@ export class DateTimeComponent {
     };
 
     return this.http.get(this.baseUrl, { params });
+  }
+
+  login() {
+    this.authService.login();
+  }
+  
+  logout() {
+    this.authService.logout();
   }
 
   ngOnDestroy() {

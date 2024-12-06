@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { OurServicesComponent } from './MyComponents/our-services/our-services.component';
 import { OurCustomersComponent } from './MyComponents/our-customers/our-customers.component';
 import { AboutUsComponent } from './MyComponents/about-us/about-us.component';
+import { environment } from '../environment/environment';
 
 @Component({
   selector: 'app-root',
